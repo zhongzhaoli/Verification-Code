@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <img style="cursor:pointer;" onclick="aaa(this)" src="index.php">
+    <br>
+        <input type="text" id="code" name="code">
+        <input type="button" onclick="bbb()" value="验证">
+</body>
+
+</html>
+<script>
+    function aaa(a){
+        a.src="index.php";
+    }
+    function bbb(){
+        var a=document.getElementById('code').value;
+        $.post('yz.php',{code:a},function(e){
+            alert(e);
+        })
+    }
+</script>
